@@ -48,7 +48,7 @@ let fetch = function($serchData) {
 // find Search Data the respond from the API data 
 function addWeather(data, $serchData) {
     // console.log(data);
-    let cityName = $serchData
+    let cityName = $serchData.toUpperCase();
     let currentTemp = data.query.results.channel.item.condition.temp
     let weatherDiscription = data.query.results.channel.item.condition.text
         //

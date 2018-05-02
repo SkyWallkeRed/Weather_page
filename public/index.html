@@ -8,7 +8,7 @@
     <title>Weather Page</title>
 
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous"> -->
 
 
     <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
@@ -19,10 +19,21 @@
 
 <body>
 
-    <div class="wrapper">
+    <div class="wrapper container">
+
+        <h1><i class="fa fa-cloud fa-2x" aria-hidden="true"></i>
+            <i class="fa fa-cloud" aria-hidden="true"></i>Easy Weather</h1>
         <form action="">
+            <!-- // -->
+            <!-- <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">With textarea</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+            </div> -->
+            <!-- // -->
             <input type="text" class="userInput" placeholder="Type a City Name">
-            <button type="button" class="searchWeather">go</button>
+            <button type="button" class="searchWeather btn btn-info">go</button>
         </form>
         <div class="display">
 
@@ -39,16 +50,16 @@
 
     <script id="template" type="text/x-handlebars-template">
         <div class="weatherDisplay">
-            <span class="cityWeather"> City Name {{cityName}} - City Temp {{currentTemp}} -: {{weatherDiscription}}</span><br>
+            <h2 class="cityWeather"> {{cityName}} <i class="fa fa-thermometer-empty" aria-hidden="true"></i> {{currentTemp}} {{weatherDiscription}}</h2><br>
             <ul class="weatherComments">
                 {{#each weatherComments}}
                 <li>{{text}}</li>
                 {{/each}}
             </ul>
             <input type="text" class="commentInput">
-            <button class="commentBtn"> comment</button>
-            <span class="removeResult"><i class="far fa-trash-alt"></i></span>
-            <hr>
+            <button class="commentBtn btn btn-info"> comment</button>
+            <span class="removeResult"><i class="fa fa-trash fa-3x" aria-hidden="true"></i></span>
+
         </div>
     </script>
 
