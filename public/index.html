@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Page</title>
+
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <form action="">
+            <input type="text" class="userInput" placeholder="Type a City Name">
+            <button type="button" class="searchWeather">go</button>
+        </form>
+        <div class="display">
+
+
+            <div class="commentsDisplay">
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script id="template" type="text/x-handlebars-template">
+        <div class="weatherDisplay">
+            <span class="cityWeather"> City Name {{cityName}} - City Temp {{currentTemp}} -: {{weatherDiscription}}</span><br>
+            <ul class="weatherComments">
+                {{#each weatherComments}}
+                <li>{{text}}</li>
+                {{/each}}
+            </ul>
+            <input type="text" class="commentInput">
+            <button class="commentBtn"> comment</button>
+            <span class="removeResult"><i class="far fa-trash-alt"></i></span>
+            <hr>
+        </div>
+    </script>
+
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="handlebars/dist/handlebars.min.js"></script>
+
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+div.wrapper {
+    margin-top: 20%;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: beige;
+}
+
+.display {
+    background-color: aquamarine;
+    border: 2px solid black;
+}
+
+.commentsDisplay {
+    background-color: azure;
+}
+
+span.cityWeather {
+    background-color: steelblue;
+}
