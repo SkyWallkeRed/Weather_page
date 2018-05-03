@@ -19,13 +19,16 @@ $('.searchWeather').on('click', function() {
 })
 
 $('.display').on('click', '.removeResult', function() {
-    var $clickedPost = $(this).closest('.cityWeather');
+    var $clickedPost = $(this).closest('.weatherDisplay');
     var index = $clickedPost.index();
-
+    console.log($clickedPost + 'from remove btn')
+    console.log(index + 'from remove btn')
     removePost($clickedPost, index);
 });
 
 function removePost($clickedPost, index) {
+    console.log($clickedPost + 'from remove func')
+    console.log(index + 'from remove func')
     weatherResult.splice(index, 1);
     $clickedPost.remove();
     saveToLocalStorage();
@@ -92,11 +95,9 @@ function createComment(text, weatherIndex) {
 var updateDisplay = function() {
     $('.display').empty();
     getFromLocalStorage();
-
     for (var i = 0; i < weatherResult.length; i++) {
         var template = Handlebars.compile($('#template').html())
         var newItem = template(weatherResult[i]);
-
         $('.display').append(newItem);
     }
 }
