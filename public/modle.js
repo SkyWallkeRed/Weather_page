@@ -6,12 +6,10 @@ class Weather {
         this.weatherComments = [];
     }
 }
-
 class Comment {
     constructor(comment) {
         this.comment = comment;
     }
 }
-
 export { Weather }
 export { Comment }
