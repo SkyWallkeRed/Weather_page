@@ -9,7 +9,7 @@ var getFromLocalStorage = function() {
 }
 
 let $display = $('.display');
-weatherResult = getFromLocalStorage();
+let weatherResult = getFromLocalStorage();
 // on click for the serch 
 $('.searchWeather').on('click', function() {
     var $serchData = $('.userInput').val();
@@ -50,13 +50,13 @@ let fetch = function($serchData) {
 
 // find Search Data the respond from the API data 
 function addWeather(data, $serchData) {
-    // console.log(data);
+    console.log(data);
     let cityName = $serchData.toUpperCase();
     let currentTemp = data.query.results.channel.item.condition.temp
     let weatherDiscription = data.query.results.channel.item.condition.text
-        //
+
     let weatherData = new Wather(cityName, currentTemp, weatherDiscription);
-    // console.log(weatherData);
+    console.log(weatherData);
     weatherResult.push(weatherData);
     saveToLocalStorage();
     console.log(weatherResult)
