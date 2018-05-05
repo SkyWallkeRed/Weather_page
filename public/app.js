@@ -1,7 +1,6 @@
 console.log('js-on')
 
 import { data } from './data.js'
-import { Comment } from './modle.js'
 import { api } from './api.js'
 import { view } from './view.js'
 let $display = $('.display');
@@ -10,6 +9,19 @@ export { $display }
 data.getFromLocalStorage();
 view.updateDisplay();
 
+$('form').submit(function(ev) {
+    ev.preventDefault();
+
+});
+
+$(".userInput").on('keyup', function(event) {
+    if (event.keyCode == 13) {
+        $(".searchWeather").trigger('click');
+    } else {
+        event.preventDefault();
+        return false;
+    }
+});
 
 $('.searchWeather').on('click', function() {
     var $serchData = $('.userInput').val();

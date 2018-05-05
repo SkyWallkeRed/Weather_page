@@ -1,4 +1,4 @@
-import { $display } from './app.js'
+// import { $display } from './app.js'
 import { Weather } from './modle.js'
 import { view } from './view.js'
 var STORAGE_ID = 'GetWeather';
