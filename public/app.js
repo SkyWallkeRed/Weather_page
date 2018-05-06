@@ -31,7 +31,6 @@ $('.searchWeather').on('click', function() {
     weatherApi.fetch($serchData).then(function(data) {
         let cityWeather = new Weather(data, $serchData)
         cityWeatherData.weatherResult.push(cityWeather)
-        console.log(cityWeatherData.weatherResult)
         cityWeatherData.saveToLocalStorage();
         view.updateDisplay();
     }).catch(function() {
@@ -47,7 +46,6 @@ $('.searchWeather').on('click', function() {
 export { cityWeatherData }
 
 $('.display').on('click', '.commentBtn', function() {
-    console.log('click comment')
     var text = $(this).siblings('.commentInput').val();
     var weatherIndex = $(this).closest('.weatherDisplay').index();
     cityWeatherData.createComment(text, weatherIndex);
