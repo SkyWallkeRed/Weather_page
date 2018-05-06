@@ -1,5 +1,3 @@
-console.log('js-on')
-
 import { data } from './data.js'
 import { api } from './api.js'
 import { view } from './view.js'
@@ -25,12 +23,11 @@ $(".userInput").on('keyup', function(event) {
 
 $('.searchWeather').on('click', function() {
     var $serchData = $('.userInput').val();
-    console.log($serchData)
+    // console.log($serchData)
     api.fetch($serchData);
     $('.userInput').val("");
     data.saveToLocalStorage();
     view.updateDisplay();
-
 });
 
 $('.display').on('click', '.commentBtn', function() {
@@ -45,8 +42,8 @@ $('.display').on('click', '.commentBtn', function() {
 $('.display').on('click', '.removeResult', function() {
     var $clickedPost = $(this).closest('.weatherDisplay');
     var index = $clickedPost.index();
-    console.log($clickedPost + 'from remove btn')
-    console.log(index + 'from remove btn')
+    // console.log($clickedPost + 'from remove btn')
+    // console.log(index + 'from remove btn')
     data.removePost($clickedPost, index);
     data.saveToLocalStorage()
     view.updateDisplay();

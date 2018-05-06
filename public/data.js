@@ -5,7 +5,7 @@ var STORAGE_ID = 'GetWeather';
 
 class Data {
     constructor() {
-        // this.weatherResult = this.getFromLocalStorage();
+        // this.weatherResult = this.getFromLocalStorage(); // ? ! ? 
     }
     addWeather(data, $serchData) {
         let cityName = $serchData.toUpperCase();
@@ -22,8 +22,6 @@ class Data {
             $('body').css('background-image', 'url(https://images.unsplash.com/photo-1419833173245-f59e1b93f9ee?ixlib=rb-0.3.5&s=cc359049551174327fc371a839464444&auto=format&fit=crop&w=1500&q=80)');
         }
         //
-
-        //
         let weatherData = new Weather(cityName, currentTemp, weatherDiscription);
         // console.log(weatherData);
         weatherResult.push(weatherData);
@@ -31,8 +29,8 @@ class Data {
         view.updateDisplay();
     }
     removePost($clickedPost, index) {
-        console.log($clickedPost + 'from remove func')
-        console.log(index + 'from remove func')
+        // console.log($clickedPost + 'from remove func')
+        // console.log(index + 'from remove func')
         weatherResult.splice(index, 1);
         $clickedPost.remove();
         this.saveToLocalStorage();
@@ -44,15 +42,12 @@ class Data {
         this.saveToLocalStorage();
         view.updateDisplay();
     };
-
     saveToLocalStorage() {
         localStorage.setItem(STORAGE_ID, JSON.stringify(weatherResult));
     }
     getFromLocalStorage() {
         return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
     }
-
-
 }
 const data = new Data();
 let weatherResult = data.getFromLocalStorage();
